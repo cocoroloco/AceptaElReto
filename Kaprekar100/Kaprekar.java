@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class kaprekar {
+public class Kaprekar {
 
     // Función para ordenar los dígitos de un número en orden ascendente
     public static String ordenarAscendente(String num) {
