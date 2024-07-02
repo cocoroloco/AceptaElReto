@@ -6,17 +6,20 @@ public class BarJavier {
     private static String input;
     private static double NumericInput;
     static Scanner s = new Scanner(System.in);
-    static double totalAverage=0;
-    static double mealAverage=0;
-    static double totalDayProfit=0;
+    static double totalAverage = 0;
+    static double mealAverage = 0;
+    static double totalDayProfit = 0;
     static double biggestIncome = 0;
     static double lowestIncome = 2147483647;
     static int totalSellsNum = 0;
     static int totalMealsNum = 0;
-    static int biggestDayIndex=-1;
-    static int lowestDayIndex=-1;
-    static boolean biggestDayTie=false;
-    static boolean lowestDayTie=false;
+    static int biggestDayIndex = -1;
+    static int lowestDayIndex = -1;
+    static boolean biggestDayTie = false;
+    static boolean lowestDayTie = false;
+    // TODO COMPROBAR CASO A 100.00 N 0
+    // EN ESTE CASO DEBERIA SALIR NO PERO EN EL MIO SALE SI
+    // Ejemplo, si solo hay cena, sería empate entre los 0 o solo esa categoria
 
     // 0 D Desayunos
     // 1 A Comidas
@@ -55,7 +58,6 @@ public class BarJavier {
     }
 
     public static void printResults() {
-        
 
         totalDayProfit = categories[0] + categories[1] + categories[2] + categories[3] + categories[4];
         mealAverage = categories[1] / totalMealsNum;
@@ -115,8 +117,8 @@ public class BarJavier {
             lowestIncome = 2147483647;
             totalSellsNum = 0;
             totalMealsNum = 0;
-            biggestDayIndex=-1;
-            lowestDayIndex=-1;
+            biggestDayIndex = -1;
+            lowestDayIndex = -1;
             biggestDayTie = false;
             lowestDayTie = false;
             return true;
@@ -127,6 +129,7 @@ public class BarJavier {
                     break;
                 case 'A':
                     categories[1] = categories[1] + NumericInput;
+                    totalMealsNum = totalMealsNum + 1;
                     break;
                 case 'M':
                     categories[2] = categories[2] + NumericInput;
@@ -137,7 +140,6 @@ public class BarJavier {
 
                 case 'C':
                     categories[4] = categories[4] + NumericInput;
-                    totalMealsNum = totalMealsNum + 1;
                     break;
                 default:
                     break;
